@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<Div class="divErrorFiltrado">
+    <h2>Ups.. hubo un error, no se escribio ninguna marca!</h2>
+    <a href="{% url 'compra' %}" class="btn btn-primary btn-s text-dark">Regresar</a>
+</Div>
+
+
+{% endblock contenidoQueCambia %}

@@ -1,0 +1,31 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<div id="miCuenta">
+    <div  class="divSaludo">
+        <h4>Hola!  {{user.username}}</h4>
+    </div>
+    <div class="divFlex">
+        <Div class="divMiCuenta3">
+            {% if url %}
+                <img src="{{url}}" alt="avatar" height="120rem">
+            {% else %}
+                <a href="{% url 'agregarAvatar' %}"  class="btn btn-primary btn-s text-dark">Agregar avatar</a>
+            {% endif %}
+            <div >
+                <h5>Tus datos:</h5>
+                <p>EMAIL:  {{user.email}}</p>
+                <p>NOMBRE:  {{user.first_name}}</p>
+                <p>APELLIDO:  {{user.last_name}}</p>
+            </div>
+        </div>
+    </div>
+    
+    <Div class="divMiCuenta5">
+        <a href="{% url 'editarUsuario' %}"  class="btn btn-primary btn-s text-dark">Editar usuario</a>
+        <a href="{% url 'cerrarSesion' %}"  class="btn btn-primary btn-s text-dark">Cerrar sesion</a>
+    </Div>
+</div>
+
+{% endblock contenidoQueCambia %}

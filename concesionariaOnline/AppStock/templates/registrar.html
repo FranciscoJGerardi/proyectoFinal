@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<Div class="divRegistrar">
+    <h2>Bienvenido ingrese los datos que se le solicita!</h2>
+
+    <form action="{% url 'registrar' %}" method="POST">{% csrf_token %}
+
+        {{miFormulario.as_p}}
+
+        <button type="submit" class="btn btn-primary btn-s text-dark"> Registrar </button>
+    </form>
+</Div>
+
+{% endblock contenidoQueCambia %}

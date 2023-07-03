@@ -1,0 +1,28 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+    <div class="divDetalleAuto">
+        <div class="card">
+            <img src={{auto.imagen.url}} class="card-img-top" alt="imagen del auto">
+            <div class="card-body">
+                <h4 class="card-title">{{auto.marca}} {{auto.modelo}}</h4>
+                <p class="card-text">{{auto.descripcion}}</p>
+                <p class="card-text">{{auto.año}}</p>
+                <p>{{auto.kilometros}}km</p>
+                <div class="divOpcionBotones">
+                    {% if user.is_authenticated %}
+                        {% if user.username == auto.nombreUsuario %}
+                            <a href="{% url 'editarPublicacion' auto.id %}" class="btn btn-primary btn-s text-dark">Editar</a>                        
+                            {% else %}
+                                <a href="{% url 'comprarAuto' auto.id %}" class="btn btn-primary btn-s text-dark">Comprar</a>  
+                        {% endif %}
+                    {% else %}
+                        <a href="{% url 'comprarAuto' auto.id %}" class="btn btn-primary btn-s text-dark">Comprar</a>
+                    {% endif %} 
+                    <p>${{auto.precio}}</p>
+                </div>    
+            </div>
+        </div>
+    </div>
+{% endblock contenidoQueCambia %}

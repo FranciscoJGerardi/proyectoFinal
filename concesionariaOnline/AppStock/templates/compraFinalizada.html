@@ -1,0 +1,13 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<Div class="divCompraFinalizada" style="padding-top: 8rem; padding-left: 1rem;">
+    <h2>Felicitaciones!</h2>
+    <h4>La compra a salido correctamente nos estaremos comunicando con vos a la brevedad...</h4>
+    <a href="{% url 'inicio' %}" class="btn btn-primary btn-s text-dark">Inicio</a>
+</Div>
+
+
+{% endblock contenidoQueCambia %}

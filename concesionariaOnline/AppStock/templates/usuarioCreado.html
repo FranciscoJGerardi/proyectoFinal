@@ -1,0 +1,11 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<Div class="divUsuarioCreado">
+    <h2>Felicidades el usuario {{mensaje}} fue creado correctamente!</h2>
+    <a href="{% url 'iniciarSesion' %}" class="btn btn-primary btn-s text-dark">Iniciar sesion</a>
+</Div>
+
+{% endblock contenidoQueCambia %}

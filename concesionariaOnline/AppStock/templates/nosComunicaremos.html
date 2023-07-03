@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<Div class="divNosComunicaremos">
+    <h2>Loa datos fueron ingresados correctamente!</h2>
+    <h4>Nos estaremos comunicando con vos a la brevedad...</h4>
+    <a href="{% url 'inicio' %}" class="btn btn-primary btn-s text-dark">Inicio</a>
+</Div>
+
+{% endblock contenidoQueCambia %}

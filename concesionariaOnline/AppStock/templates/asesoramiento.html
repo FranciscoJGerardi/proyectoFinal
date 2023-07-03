@@ -1,0 +1,19 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<Div class="saludoAsesoramiento">
+    <h3>Te asesoramos al momento de comprar un auto para que sea el indicado para vos!</h3>
+</Div>
+<div class="divAsesoramiento">
+    <h5 >Ingrese los datos!</h5>
+    <form action="{% url 'asesoramiento' %}" method="POST">{% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type="submit" class="btn btn-primary btn-s text-dark"> Enviar </button>
+</form>
+</div>
+
+{% endblock contenidoQueCambia %}

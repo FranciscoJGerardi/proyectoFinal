@@ -1,0 +1,45 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+    <section class="page-section" id="servicios">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Servicios</h2>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Compra tu nuevo auto</h4>
+                    <p class="text-muted">Aca podes entrar para mirar o comparar todos nuestros autos publicados y 
+                        si te decidis por uno lo podes comprar. </p>
+                    <a class="btn btn-primary btn-lg text-dark" href="{% url 'compra' %}">Mas...</a>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Publica tu auto</h4>
+                    <p class="text-muted">Si estas buscando vender tu auto entra aca y 
+                        completa la planilla de datos para publicarlo en nuestra pagina.</p>
+                    <a class="btn btn-primary btn-lg text-dark" href="{% url 'venta' %}">Mas...</a>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Asesoramiento de Compra</h4>
+                    <p class="text-muted">Si no te podes decidir por un auto o queres ayuda de un profesional dejanos 
+                        tus datos y tu duda que nos estaremos comunicando con usted para poder ayudarlo.
+                    </p>
+                    <a class="btn btn-primary btn-lg text-dark" href="{% url 'asesoramiento' %}">Mas...</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock contenidoQueCambia %}

@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<div class="divAutoPublicado">
+    <Div>
+        <h2>Felicitaciones tu auto fue publicado correctamente!</h2>
+        <a href="{% url 'inicio' %}" class="btn btn-primary btn-s text-dark">Inicio</a>
+    </Div>
+</div>
+
+{% endblock contenidoQueCambia %}

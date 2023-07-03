@@ -1,0 +1,36 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+    {% if autos %}
+        <Div class="divResultadoCompra1">
+            <h3>Los resultados de {{marca}} son:</h3>
+        </Div>
+        
+        <div class="divResultadoCompra2">
+                {% for auto in autos %}
+                <div>
+                    <a href="{% url 'detalleDelAuto' auto.id %}">
+                        <div class="card">
+                            <img src={{auto.imagen.url}} class="card-img-top" alt="imagen del auto">
+                            <div class="card-body">
+                                <h4 class="card-text">{{auto.marca}} {{auto.modelo}}</h4>
+                                <div class="divP">
+                                    <p>{{auto.kilometros}}km </p>
+                                    <p>${{auto.precio}}</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </a>
+                </div>
+                {% endfor %}  
+        </div>
+
+        {% else %} 
+            <div class="noBusco">
+                <h3>No se a encontrado ningun auto de la marca {{marca}}</h3>
+                <a href="{% url 'compra' %}" class="btn btn-primary btn-s text-dark">Regresar</a>
+            </div>
+    {% endif %}
+        
+{% endblock contenidoQueCambia %}

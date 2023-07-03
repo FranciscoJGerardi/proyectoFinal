@@ -1,0 +1,11 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+    <header class="masthead" id="inicio">
+        <div class="container">
+            <div class="masthead-subheading">Bienvenido !</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'servicios' %}">Conocer mas...</a>
+        </div>
+    </header>
+{% endblock contenidoQueCambia %}

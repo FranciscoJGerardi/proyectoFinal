@@ -1,0 +1,19 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <div class="saludoEditarPublicacion" >
+        <h4>Edita los datos que necesites!</h4>
+    </div>
+
+    <Div class="divEditarPublicacion">
+        <form action="{% url 'editarPublicacion' auto.id %}" method="POST">{% csrf_token %}
+
+            {{form.as_p}}
+            
+            <button type="submit" class="btn btn-primary btn-s text-dark"> Guardar </button>
+        </form>
+    </div>
+
+{% endblock contenidoQueCambia %}

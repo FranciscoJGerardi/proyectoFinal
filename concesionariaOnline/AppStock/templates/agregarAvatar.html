@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<div class="saludoAgregarAvatar" >
+    <h4>Carga una imagen para usar de avatar!</h4>
+</div>
+
+<form class="formAgregarAvatar" method="POST" enctype="multipart/form-data" > {% csrf_token %}
+
+   {{miFormulario.as_p}}
+
+   <button type="submit" class="btn btn-primary btn-s text-dark"> Cargar </button>
+
+</form>
+
+{% endblock contenidoQueCambia %}

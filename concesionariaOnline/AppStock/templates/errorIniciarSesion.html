@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<Div class="divErrorIiniciarSesion">
+    <h2>Ups.. hubo un error los datos no son validos!</h2>
+    {% for fields_error in miFormulario.errors.values  %}
+        {% for error in fields_error %}
+            <h5>{{error}}</h5>
+        {% endfor %}
+    {% endfor %}
+
+    <a href="{% url 'iniciarSesion' %}" class="btn btn-primary btn-s text-dark">Regresar</a>
+</Div>
+
+{% endblock contenidoQueCambia %}

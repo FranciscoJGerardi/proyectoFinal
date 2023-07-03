@@ -1,0 +1,23 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<div class="divIiniciarSesion">
+    <Div>
+        <h2>Bienvenido inicie sesion para disfrutar de nuestros servicios!</h2>
+    </Div>
+
+    <form action="" method="POST">{% csrf_token %}
+
+        {{miFormulario.as_p}}
+
+        <button type="submit" class="btn btn-primary btn-s text-dark"> Ingresar </button>
+    </form>
+
+    <Div class="divRegistrarse">
+        <h4>Si no tienes ninguna cuneta registrate aqui</h4>
+        <a href="{% url 'registrar' %}" class="btn btn-primary btn-s text-dark">Registrarse</a>
+    </Div>
+</div>
+
+{% endblock contenidoQueCambia %}

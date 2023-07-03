@@ -1,0 +1,19 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <div class="saludoVenta">
+        <h4>Dejanos los datos del auto que nosotros lo publicamos!</h4>
+    </div>
+
+    <Div class="divVenta">
+        <form action="{% url 'venta' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+            {{form.as_p}}
+            
+            <button type="submit" class="btn btn-primary btn-s text-dark"> Enviar </button>
+        </form>
+    </div>
+
+{% endblock contenidoQueCambia %}

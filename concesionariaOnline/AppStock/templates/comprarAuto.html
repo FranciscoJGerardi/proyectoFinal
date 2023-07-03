@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <Div class="divComprarAuto">
+        <form method="POST">{% csrf_token %}
+            <h3>Estas seguro que deseas comprar el auto {{auto.marca}} {{auto.modelo}}</h3>
+            <div class="divComprarCancelar">
+                <button type="submit" class="btn btn-primary btn-s text-dark">Comprar</button>
+                <a href="{% url 'compra' %}" class="btn btn-danger">Cancelar</a>
+            </div> 
+        </form>
+    </div>
+{% endblock contenidoQueCambia %}
